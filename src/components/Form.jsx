@@ -42,7 +42,7 @@ export default function Form() {
         // In React Hook Form, the "e" isn't the event anymore, it is the JSON 
         // alert(JSON.stringify(data));
         openResult();
-        console.log(data);
+        console.log(JSON.stringify(data));
     }
 
 
