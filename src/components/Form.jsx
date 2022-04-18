@@ -38,10 +38,11 @@ export default function Form() {
         setShowResult(prev => !prev);
     }
 
-    const onSubmit = (e) => {
+    const onSubmit = (data) => {
         // In React Hook Form, the "e" isn't the event anymore, it is the JSON 
         // alert(JSON.stringify(data));
         openResult();
+        console.log(data);
     }
 
 
@@ -75,15 +76,16 @@ export default function Form() {
 
                     <div className="formInput">
                         <p>Whiskers on kittens</p>
-                        <input type="checkbox" checked={kittens} onChange={(e) => setKittens(e.target.checked)}/>
+                        <input type="checkbox" {...register("kittens")} checked={kittens} onChange={(e) => setKittens(e.target.checked)}/>
+
                     </div>
                     <div className="formInput">
                         <p>Warm woolen mittens</p>
-                        <input type="checkbox" checked={mittens} onChange={(e) => setMittens(e.target.checked)}/>
+                        <input type="checkbox" {...register("mittens")} checked={mittens} onChange={(e) => setMittens(e.target.checked)}/>
                     </div>
                     <div className="formInput">
                         <p>Crisp apple strudels</p>
-                        <input type="checkbox" checked={strudels} onChange={(e) => setStrudels(e.target.checked)}/>
+                        <input type="checkbox" {...register("strudels")} checked={strudels} onChange={(e) => setStrudels(e.target.checked)}/>
                     </div>
                     
                 </FormContent>
