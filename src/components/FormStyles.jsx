@@ -1,13 +1,17 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-    min-width: 600px;
+    max-width: 600px;
+    position: relative;
     .form_error {
         color: red;
         font-size: 14px;
         margin: 2rem;
     }
-    
+    // Mobile 
+    @media only screen and (max-width: 580px) {
+        margin: 2rem;
+    }
 `
 
 export const Button = styled.button`
@@ -30,20 +34,14 @@ export const FormContent = styled.div `
     border-radius: 4px;
     padding: 16px;
     margin: 13px 0;
+    position: relative;
     .firstTitle, .secondTitle, .thirdTitle {
         position: absolute;
         background-color: #F0F5F9;
         padding: 0 6px;
+        top: -.8rem;
     }
-    .firstTitle {
-        top: 0.2rem;
-    }
-    .secondTitle {
-        top: 36.5%;
-    }
-    .thirdTitle {
-        top: 68.2%;
-    }
+    
     .formInput {
         display: flex;
         align-items: center;
@@ -60,5 +58,24 @@ export const FormContent = styled.div `
             }
         }
     }
+    .questions {
+        // Mobile
+        p {
+            margin-bottom: 5px;
+        }
+        @media only screen and (max-width: 580px) {
+            display: block;
+            text-align: center;
+        }
+    }
     
+`
+
+export const Result = styled.div`
+    .mainTitle {
+        margin-bottom: 1rem;
+    }
+    .sections {
+        line-height: 25px;
+    }
 `

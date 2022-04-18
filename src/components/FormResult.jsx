@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, FormContent} from "./FormStyles";
+import { Container, FormContent, Result} from "./FormStyles";
 
 export default function FormResult({data, showResult, setShowResult}) {
 
@@ -7,25 +7,36 @@ export default function FormResult({data, showResult, setShowResult}) {
     <div>
       {showResult && 
           <Container>
-          <FormContent>
-              <h1>Form submitted!</h1>
+            <FormContent>
+              <Result>
 
-              <h3>Three Questios: </h3>
-              <p>Name: {data.name}</p>
-              <p>Quest: {data.quest}</p>
-              <p>Airspeed: {data.airspeed}</p>
+                <h2 className='mainTitle'>Your awnswers: </h2>
 
-              <h3>My favourite things:</h3>
-              {/* The ternary function is only necessary when there's an if/else statement to be made. If the condition is between 
-              a condition to appear or null, it should only have '&&' and the 'true statement'  */}
-              {data.kittens === true && <p>Kittens</p>}
-              {data.mittens === true && <p>Mittens</p>}
-              {data.strudels === true && <p>Strudels</p>}
+                <div className="sections">
+                  <h3>Three Questions: </h3>
+                  <p>Name: {data.name}</p>
+                  <p>Quest: {data.quest}</p>
+                  <p>Airspeed: {data.airspeed}</p>
+                </div>
+                
+                <div className="sections">
+                  <h3>My favourite things:</h3>
+                  {/* The ternary function is only necessary when there's an if/else statement to be made. If the condition is between 
+                  a condition to appear or null, it should only have '&&' and the 'true statement'  */}
+                  {data.kittens === true && <p>Kittens</p>}
+                  {data.mittens === true && <p>Mittens</p>}
+                  {data.strudels === true && <p>Strudels</p>}
+                </div>
+                
 
-              <h3>Turing test: </h3>
-              <p>{data.robot}</p>
-              
-          </FormContent>
+                <div className="sections">
+                  <h3 >Turing test: </h3>
+                  <p>{data.robot}</p>
+                </div>
+                
+
+              </Result>
+            </FormContent>
         </Container>
       }
         

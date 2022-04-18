@@ -54,16 +54,16 @@ export default function Form() {
                 <FormContent>
                     <p className='firstTitle'>Answer me these three question</p>
                     
-                    <div className="formInput">
+                    <div className="formInput questions">
                         <p>What is your name?</p>
                         <input type="text" value={name} {...register("name",  {required: true})} onChange={(e) => setName(e.target.value)}/>
                         {/* {errors.name && alert("All form values are required to submit.")} */}
                     </div>
-                    <div className="formInput">
+                    <div className="formInput questions">
                         <p>What is your quest?</p>
                         <input type="text" value={quest} {...register("quest",  {required: true})} onChange={(e) => setQuest(e.target.value)} />
                     </div>
-                    <div className="formInput">
+                    <div className="formInput questions">
                         <p>What is the airspeed velocity of an unladen swallow?</p>
                         <input type="text" value={airspeed} {...register("airspeed", {required: true})} onChange={(e) => setAirspeed(e.target.value)}  />
                     </div>
@@ -85,6 +85,7 @@ export default function Form() {
                         <p>Crisp apple strudels</p>
                         <input type="checkbox" checked={strudels} onChange={(e) => setStrudels(e.target.checked)}/>
                     </div>
+                    
                 </FormContent>
                 <FormContent>
                     <p className='thirdTitle'>Turing Test</p>    
