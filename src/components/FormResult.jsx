@@ -5,27 +5,29 @@ export default function FormResult({data, showResult, setShowResult}) {
 
   return (
     <div>
-      {showResult ? 
+      {showResult && 
           <Container>
           <FormContent>
               <h1>Form submitted!</h1>
 
-              <h2>Three Questios: </h2>
+              <h3>Three Questios: </h3>
               <p>Name: {data.name}</p>
               <p>Quest: {data.quest}</p>
               <p>Airspeed: {data.airspeed}</p>
 
-              <h2>My favourite things:</h2>
-              {data.kittens === true ? <p>Kittens</p> : null}
-              {data.mittens === true ? <p>Mittens</p> : null}
-              {data.strudels === true ? <p>Strudels</p> : null}
+              <h3>My favourite things:</h3>
+              {/* The ternary function is only necessary when there's an if/else statement to be made. If the condition is between 
+              a condition to appear or null, it should only have '&&' and the 'true statement'  */}
+              {data.kittens === true && <p>Kittens</p>}
+              {data.mittens === true && <p>Mittens</p>}
+              {data.strudels === true && <p>Strudels</p>}
 
-              <h2>Turing test: </h2>
+              <h3>Turing test: </h3>
               <p>{data.robot}</p>
               
           </FormContent>
         </Container>
-      : null}
+      }
         
     </div>
   )

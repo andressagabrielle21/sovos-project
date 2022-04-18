@@ -1,7 +1,12 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-    max-width: 600px;
+    min-width: 600px;
+    .form_error {
+        color: red;
+        font-size: 14px;
+        margin: 2rem;
+    }
     
 `
 
@@ -55,9 +60,5 @@ export const FormContent = styled.div `
             }
         }
     }
-    .form_error {
-        color: red;
-        font-size: 14px;
-        margin: 2rem;
-    }
+    
 `

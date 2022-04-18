@@ -12,7 +12,7 @@ export default function Form() {
     //Every React hook should NEVER be called inside a function, loops or conditions.
     const [name, setName] = useState('');
     const [quest, setQuest] = useState('');
-    const [airspeed, setAirspeed] = useState('');
+    const [airspeed, setAirspeed] = useState('');    
     // Checkbox form 
     const [kittens, setKittens] = useState(false);
     const [mittens, setMittens] = useState(false);
@@ -50,23 +50,25 @@ export default function Form() {
     <div>
         <Container>
             <form onSubmit={handleSubmit(onSubmit)}>
+
                 <FormContent>
                     <p className='firstTitle'>Answer me these three question</p>
                     
                     <div className="formInput">
                         <p>What is your name?</p>
-                        <input type="text" value={name} {...register("name")} onChange={(e) => setName(e.target.value)}/>
+                        <input type="text" value={name} {...register("name",  {required: true})} onChange={(e) => setName(e.target.value)}/>
                         {/* {errors.name && alert("All form values are required to submit.")} */}
                     </div>
                     <div className="formInput">
                         <p>What is your quest?</p>
-                        <input type="text" value={quest} {...register("quest")} onChange={(e) => setQuest(e.target.value)} />
+                        <input type="text" value={quest} {...register("quest",  {required: true})} onChange={(e) => setQuest(e.target.value)} />
                     </div>
                     <div className="formInput">
                         <p>What is the airspeed velocity of an unladen swallow?</p>
-                        <input type="text" value={airspeed} {...register("airspeed")} onChange={(e) => setAirspeed(e.target.value)}  />
+                        <input type="text" value={airspeed} {...register("airspeed", {required: true})} onChange={(e) => setAirspeed(e.target.value)}  />
                     </div>
                 </FormContent>
+                
 
                 <FormContent>
                     <p className='secondTitle'>A few of my favourite things</p>
@@ -97,13 +99,13 @@ export default function Form() {
                         <p>I am not a robot</p>
                         <input type="radio" {...register("robot", {required: true})} value="I'm not a robot." onChange={(e) => setRobot(e.target.value)}/>
                     </div>
-
-                    {/* Error message for the radio group */}
-                    {errors.robot && (
-                    <div className="form_error">All form values are required to submit.</div>
-                    )}
                     
                 </FormContent>
+                
+                {/* Error messages */}
+                {(errors.robot, errors.name, errors.quest, errors.airspeed) && (
+                    <div className="form_error">All form values are required to submit.</div>
+                    )}
                 
                 <Button>Submit</Button>
 
