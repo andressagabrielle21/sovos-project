@@ -58,7 +58,6 @@ export default function Form() {
                     <div className="formInput questions">
                         <p>What is your name?</p>
                         <input type="text" value={name} {...register("name",  {required: true})} onChange={(e) => setName(e.target.value)}/>
-                        {/* {errors.name && alert("All form values are required to submit.")} */}
                     </div>
                     <div className="formInput questions">
                         <p>What is your quest?</p>
