@@ -23,9 +23,9 @@ export default function FormResult({data, showResult, setShowResult}) {
                   <h3>My favourite things:</h3>
                   {/* The ternary function is only necessary when there's an if/else statement to be made. If the condition is between 
                   a condition to appear or null, it should only have '&&' and the 'true statement'  */}
-                  {data.kittens === true && <p>Kittens</p>}
-                  {data.mittens === true && <p>Mittens</p>}
-                  {data.strudels === true && <p>Strudels</p>}
+                  {data.kittens === true && <p>Whiskers on kittens</p>}
+                  {data.mittens === true && <p>Warm woolen mittens</p>}
+                  {data.strudels === true && <p>Crisp apple strudels</p>}
                 </div>
                 
 

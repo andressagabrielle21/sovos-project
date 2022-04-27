@@ -38,8 +38,9 @@ export default function Form() {
         setShowResult(prev => !prev);
     }
 
+    // The handleSubmit() func is used is a form submit handler. 
     const onSubmit = (data) => {
-        // In React Hook Form, the "e" isn't the event anymore, it is the JSON 
+        // 'data' has the input value for each field
         // alert(JSON.stringify(data));
         openResult();
         console.log(JSON.stringify(data));
@@ -109,7 +110,7 @@ export default function Form() {
                     <div className="form_error">All form values are required to submit.</div>
                     )}
                 
-                <Button>Submit</Button>
+                <Button title='buttonTest'>Submit</Button>
 
                 <FormResult data={data} showResult={showResult} setShowResult={setShowResult}/>
             </form>        
